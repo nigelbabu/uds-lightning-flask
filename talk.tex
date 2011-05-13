@@ -1,22 +1,93 @@
 % The Flask thing at UDS
 \documentclass[xcolor=dvipsnames]{beamer}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{verbatim}
+\def\us{\char`\_}
 \usecolortheme[named=Black]{structure} 
 \usetheme{Copenhagen}
 
 \title{Flask}
-\subtitle[Errors]{The small framework doing big things}
-\author[nigelb]{Nigel Babu}
+\author[nigelb]{Nigel}
 \date
 
 \begin{document}
 
-\begin{frame}
-    \titlepage
-\end{frame}
+    \begin{frame}
+        \titlepage
+    \end{frame}
 
+    \begin{frame}{This Flask?}
+        \begin{center}
+	    \includegraphics[scale=0.70]{the-flask.jpg}
+	    \label{fig:the-flask}
+	    \captionof{figure}{Photo by Eflasks}
+        \end{center}
+    \end{frame}
 
-\begin{frame}
-Hello
-\end{frame}
+    \begin{frame}{No, this one}
+        \begin{center}
+	    \includegraphics[scale=0.80]{logo.png}
+	    \label{fig:logo}
+        \end{center}
+    \end{frame}
+    
+    \begin{frame}{What is it?}
+        \begin{itemize}
+            \pause \item A python micro-framework.
+            \pause \item Based on Werkzeug, Jinja 2 and good intentions.
+            \pause \item BSD licensed.
+            \pause \item Full of awesome.
+            \pause \item Doesn't force you to use a specific pattern like MVC.
+            \pause \item Very low barrier of entry.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{What does code look like?}
+
+    \begin{verbatim}
+   
+        from flask import Flask \\
+        app = Flask(\us\us name \us\us) \\
+
+        @app.route("/") \\
+        def hello(): \\
+        \hspace{20 pt}return "Hello World!" \\
+
+        if \us\us name \us\us == "\us\us main \us\us": \\
+        \hspace{20 pt}app.run()
+        
+    \end{verbatim}
+
+    \end{frame}
+
+    \begin{frame}{Does it ...}
+        \begin{itemize}
+            \pause \item Let you do templates?
+            \pause \item Give you something to do message flashing?
+            \pause \item Deal with redirects?
+            \pause \item Help with logging?
+            \pause \item Have extentions/plugins framework?
+            \pause \item Automated testing?
+            \pause \item Scale to larger applications?
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{What has been built with it?}
+        \begin{center}
+	    \includegraphics[scale=0.22]{hasgeek.png}
+	    \label{fig:hasgeek}
+        \end{center}
+        This is jobs.hasgeek.in, built in Flask as an MVC application.
+    \end{frame}
+
+    \begin{frame}
+        \Large
+        \begin{itemize}
+            \item To find more applications powered by Flask, see http://flask.pocoo.org/community/poweredby
+            \item Documentation at http://flask.pocoo.org/docs/
+            \item HasGeek job board source at http://github.com/hasgeek/hasjob
+        \end{itemize}
+    \end{frame}
 
 \end{document}
